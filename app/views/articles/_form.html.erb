@@ -1,15 +1,3 @@
-<h1>create new article<h1>
-
-
-<%= render 'form' %>
-
-<%
-
-=begin%>
-
-Note : edit code work here smoothly because in edit we use instance variable i.e. @article instead of article that's why edit code 
-we insert inside form used it
- 
 <% if @article.errors.any? %>
 
 <h2>The following errors are prevented the article from being saved</h2>
@@ -24,7 +12,7 @@ we insert inside form used it
 
 <%end%>
 
-<%= form_with scope: :article, url: articles_path, local: true, data: { turbo: false } do |f| %>
+<%= form_with(model: @article, local: true, data: { turbo: false}) do |f| %>
   <p> 
     <%= f.label :title %><br/> 
     <%= f.text_field :title %>
@@ -36,8 +24,4 @@ we insert inside form used it
   <p>
     <%= f.submit %> 
   </p>
-<% end %> 
-<%
-=end%>
-
-<%= link_to "back_to_article_Listining", articles_path %>
+<% end %>
