@@ -22,6 +22,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    @article.user =  User.first                        # for user table because we don't make a frontend for adding specifically userId which is a foriegn key that's we do it manually
     if @article.save
       redirect_to @article, notice: 'Article was successfully entered or created.'
     else
