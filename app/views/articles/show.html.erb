@@ -4,7 +4,7 @@
 
 <p> <p>TITLE:</p> <br/> <%= @article.title %></p>
 <p> <p>DESCRIPTION:</p>  <br/> <%= @article.description %></p>
-
+<p> <p>Username:</p> <br/>  <%= @article.user.username if @article.user %>  </p>
 
 
 <%= link_to 'Edit', edit_article_path(@article) %>
