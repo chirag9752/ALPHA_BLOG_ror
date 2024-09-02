@@ -5,6 +5,7 @@ class ArticlesController < ApplicationController
 
   def show
     # byebug              # it will stop the execution of server
+    @articles = Article.paginate(page: params[:page], per_page: 5)
   end
 
   def index
