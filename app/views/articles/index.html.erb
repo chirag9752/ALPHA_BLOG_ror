@@ -2,6 +2,7 @@
 
 <table>
    <thead>
+
        <tr>
        <th>ID</th>
        <th>Title</th>  
@@ -9,14 +10,16 @@
        <th>Description</th>  
        <th colspan = "3" >Actions</th>  
        </tr>
+
    </thead> 
 
    <tbody>
+   <%= will_paginate @articles %>
       <%= render 'article' %>
    <tbody>
+
 </table>
 
-<br/>
 <br/>
 <br/>
 <%= link_to "Create_new_article", new_article_path %>

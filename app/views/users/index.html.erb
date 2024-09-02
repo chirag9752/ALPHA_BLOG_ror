@@ -11,6 +11,7 @@
    </thead> 
 
 <tbody>
+ <%= will_paginate @users %>
   <% @users.each do |user| %>
      <tr> 
      <td> <%= user.id %> </td>

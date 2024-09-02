@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
   end
 
   def index
-    @articles = Article.all
+    @articles = Article.paginate(page: params[:page], per_page: 5)       # search will paginate and go to github on down you got instruction
   end
 
   def new
@@ -58,3 +58,6 @@ class ArticlesController < ApplicationController
   end
 
 end
+
+
+# To add pagination used to search gem paginate and go to github link 

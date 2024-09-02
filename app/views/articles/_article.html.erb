@@ -1,11 +1,9 @@
-
-
 <% @articles.each do |article| %>
    <tr>
-   <td>id: <%= article.id %> </td>  <br/>
-      <td>title: <%= article.title %> </td>  <br/>
-      <td>username: <%= article.user.username if article.user  %></td>  <br/>
-      <td>Description: <%= article.description %></td>  <br/>
+   <td> <%= article.id %> </td> 
+      <td><%= article.title %> </td> 
+      <td><%= article.user.username if article.user  %></td>  
+      <td><%= article.description %></td>  
 
       <td> <%= link_to "edit", edit_article_path(article)  %> </td>
       <td> <%= link_to "show", article_path(article) %> </td>

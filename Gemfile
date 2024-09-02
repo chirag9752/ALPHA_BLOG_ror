@@ -11,6 +11,9 @@ gem "sprockets-rails"
 # Gemfile
 gem 'byebug', group: [:development, :test]
 
+# for pagination search gem paginate and go to github link
+gem 'will_paginate', '~> 4.0'
+
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", "~> 1.4"
 
