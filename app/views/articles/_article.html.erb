@@ -1,0 +1,20 @@
+
+
+<% @articles.each do |article| %>
+   <tr>
+   <td>id: <%= article.id %> </td>  <br/>
+      <td>title: <%= article.title %> </td>  <br/>
+      <td>username: <%= article.user.username if article.user  %></td>  <br/>
+      <td>Description: <%= article.description %></td>  <br/>
+
+      <td> <%= link_to "edit", edit_article_path(article)  %> </td>
+      <td> <%= link_to "show", article_path(article) %> </td>
+      <td><%= button_to 'Delete', article_path(article), method: :delete, data: { confirm: 'Are you sure you want to delete this article?' } %></td>
+   </tr>
+<%
+=begin%>
+  articles_path(article)  or we can do  articles_path(article.id)  threw this we are able to detect id 
+<%
+=end%>
+
+   <% end %>
