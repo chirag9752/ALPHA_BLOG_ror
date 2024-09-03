@@ -1,16 +1,18 @@
 module ApplicationHelper
 
-    def current_user
+   #  explaination in application controller 
+
+   # def current_user
           
-       @current_user ||= User.find(session[:user_id]) if session[:user_id]
-      
-    # The ||= operator means “assign the right side value to @current_user only if @current_user is nil or false.” It helps to avoid repeatedly querying the database for the same user.
+   #    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+     
+   # # The ||= operator means “assign the right side value to @current_user only if @current_user is nil or false.” It helps to avoid repeatedly querying the database for the same user.
 
-    end
+   # end
 
-    def logged_in?
-       !!current_user
-    end
+   #  def logged_in?
+   #     !!current_user                # convert a value to boolean values
+   #  end
 end
 
 
