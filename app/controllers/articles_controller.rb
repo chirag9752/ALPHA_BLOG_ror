@@ -2,6 +2,11 @@ class ArticlesController < ApplicationController
   
   before_action :set_article, only: [:edit, :update, :show, :destroy]
   # threw this we can able to use  
+  
+  before_action :require_user, except: [:show, :index]
+
+  before_action :require_same_user, only: [:edit, :update, :destroy]
+  
 
   def show
     # byebug              # it will stop the execution of server
@@ -58,6 +63,12 @@ class ArticlesController < ApplicationController
     params.require(:article).permit(:title, :description)
   end
 
+  def require_same_user
+    if current_user != @article.user
+       flash[:alert] = "you can only edit or delete you own article" 
+       redirect_to @article
+    end
+  end
 end
 
 
