@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
         if user && user.authenticate(params[:session][:password])
             session[:user_id] = user.id
            flash[:notice] = "Logged in successfully"
-           redirect_to user
+           redirect_to articles_path
         else
             flash.now[:alert] = "There was something wrong with your login details"  
             # here we use flash.now because we are not redirecting to new page we are on previous page only tha's why
