@@ -6,7 +6,11 @@
 <p> <p>DESCRIPTION:</p>  <br/> <%= @article.description %></p>
 <p> <p>Username:</p> <br/>  <%= @article.user.username if @article.user %>  </p>
 
+<% if logged_in? && current_user == @article.user  %>
 
 <%= link_to 'Edit', edit_article_path(@article) %>
 <%= button_to 'Delete', article_path(@article), method: :delete , data: { confirm: "Are you sure?"} %>
+
+<%end%>
+
 <%= link_to 'Return to article listening' , articles_path %>
