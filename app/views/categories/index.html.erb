@@ -1,0 +1,27 @@
+<h1> Listing all categories </h1>
+
+<table>
+   <thead>
+
+       <tr>
+       <th>ID</th>
+       <th>name</th>
+       <th>Actions</th>  
+       </tr>
+
+   </thead> 
+
+   <tbody>
+   <%= will_paginate @categories %>
+       
+   <% @categories.each do |category| %>
+     <tr>
+       <td> <%= category.id %> </td> 
+         <td><%= category.name %> </td> 
+         <td> <%= link_to "show", category_path(category) %> </td>
+     </tr>
+  <% end %>
+
+   <tbody>
+
+</table>
