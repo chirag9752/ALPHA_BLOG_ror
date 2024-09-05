@@ -5,6 +5,14 @@
       <td><%= article.user.username if article.user  %></td>  
       <td><%= article.description %></td>  
 
+      <% if article.categories.any? %>
+   
+        <td> <%= render article.categories %> </td>
+        <% else %>
+
+        <td> <%= "currently dosen't have" %> </td>
+      <% end %>
+
       <td> <%= link_to "show", article_path(article) %> </td>
 
       <% if logged_in? && (current_user == article.user || current_user.admin?) %>
